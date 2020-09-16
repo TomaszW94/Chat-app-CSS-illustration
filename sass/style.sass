@@ -1,0 +1,267 @@
+*,*::before,*::after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+  
+// Color Text
+//(sub-heading at the top of the app UI)
+$paleViolet: hsl(276, 100%, 81%)
+//(chat on the left)
+$moderateViolet: hsl(276, 55%, 52%)
+//(chat on the right)
+$desaturatedDarkViolet: hsl(271, 15%, 43%)
+//(placeholder text)
+$grayishBlue: hsl(206, 6%, 79%)
+//(main heading)
+$veryDarkDesaturatedViolet: hsl(271, 36%, 24%)
+//(paragraph)
+$darkGrayishViolet: hsl(270, 7%, 64%)
+
+//Gradients
+
+//These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient:
+
+$lightMagenta: hsl(293, 100%, 63%)
+$LightViolet: hsl(264, 100%, 61%)
+
+//Secondary
+
+$White: hsl(0, 0%, 100%)
+//(app background)
+$lightGrayishViolet: hsl(270, 20%, 96%)
+//(submit button background)
+$veryDarkDesaturatedViolet: hsl(271, 36%, 24%)
+//(radio button outline)
+$veryLightMagenta: hsl(289, 100%, 72%)    
+    
+body
+    font-size: 16px
+    font-family: 'Rubik', sans-serif 
+    background-color: $lightGrayishViolet
+    overflow-x: hidden
+.bg
+    height: 80vh
+    width: 480px
+    position: absolute
+.bg-top
+    top: 0
+    left: 0
+    margin-left: -17rem
+    border-bottom-left-radius: 19rem
+    border-bottom-right-radius: 19rem
+    background: linear-gradient(50deg, $LightViolet 0%, $lightMagenta 100%)
+    @media(min-width: 1440px)
+        width: 35%
+        margin-left: -10rem
+.bg-bottom
+    display: none
+    @media(min-width: 1440px)
+        display: flex
+        bottom: 0
+        right: 0
+        height: 90%
+        background: $grayishBlue
+        opacity: 0.12
+        border-top-left-radius: 19rem
+        border-top-right-radius: 19rem
+        margin-right: -6rem
+.content
+    display: flex
+    flex-direction: column
+    @media(min-width: 1440px)
+        flex-direction: row
+        align-items: center
+        justify-content: space-evenly
+        height: calc(100vh - 19px)
+        
+.phone
+    display: flex
+    flex-direction: column
+    width: 300px
+    border: 11px solid $White
+    background-color: #F5F2F9
+    margin: 30px auto
+    border-radius: 2rem
+    box-shadow: 13px 15px 20px -15px rgba(0,0,0,0.75)
+    overflow: hidden
+    position: relative
+    
+.top
+    background-color: $White
+    height: 22px
+    width: 60%
+    position: absolute
+    top: 0
+    right: 50%
+    border-bottom-left-radius: 20px
+    border-bottom-right-radius: 20px
+    transform: translateX(50%)
+.user-bar
+    padding-top: 30px
+    padding-bottom: 10px
+    background: linear-gradient(50deg, $LightViolet 0%, $lightMagenta 100%)
+    display: flex
+    align-items: center
+.arrow
+    order: 1
+    padding: 0 5px
+    &__btn
+        border-color: transparent
+        background-color: transparent
+        font-size: 1.3rem
+        color: $White
+        @media(min-width: 1440px)
+            cursor: pointer
+.avatar
+    order: 2
+    margin-left: 10px
+    &__image
+        width: 35px
+        height: auto
+        border-radius: 50%
+.user
+    width: 100%
+    margin-left: 10px
+    order: 3
+    &__name
+        color: $White
+    &__availability
+        color: $paleViolet
+        font-size: 0.6rem
+.ellipsis
+    order: 4
+    &__btn
+        border-color: transparent
+        background-color: transparent
+        font-size: 0.8rem
+        color: $White
+        padding-right: 10px
+        @media(min-width: 1440px)
+            cursor: pointer
+    
+.messages
+    display: flex
+    flex-direction: column
+.my-messages
+    display: flex
+    flex-direction: column
+    &__text
+        background-color: #EDE5F4
+        color: $moderateViolet
+        margin: 10px auto 5px 10px
+        width: 70%
+        border-top-left-radius: 20px
+        border-top-right-radius: 20px
+        border-bottom-right-radius: 20px
+        font-size: 0.6rem
+        padding: 0.8rem
+   
+        
+.images
+    display: flex
+    justify-content: flex-end
+    &__dogs
+        width: 20%
+        height: 50px
+        margin-right: 12px
+        border-radius: 25%
+.reply
+    display: flex
+    flex-direction: column
+    margin-top: 5px
+    &__text:nth-of-type(1)
+        width: 60%
+    &__text
+        background-color: $White
+        margin: 10px 5px 5px auto
+        border-top-left-radius: 20px
+        border-top-right-radius: 20px
+        border-bottom-left-radius: 20px
+        font-size: 0.6rem
+        padding: 0.8rem
+        color: $desaturatedDarkViolet
+        box-shadow: 14px 15px 12px -9px rgba(0,0,0,0.26)
+.form
+    display: flex
+    flex-direction: column
+    font-size: 0.6rem
+    color: $lightGrayishViolet
+    
+    &__price
+        margin-left: auto
+        color: $White
+        font-weight: 700
+        font-size: 0.9rem
+.label
+    margin: 5px 0px 5px 15px
+    background: linear-gradient(60deg, $lightMagenta 0%, $LightViolet 100%)
+    padding: 1rem 0.5rem
+    display: flex
+    width: 80%
+    border-top-left-radius: 20px
+    border-top-right-radius: 20px
+    border-bottom-right-radius: 20px
+    align-items: center
+    &__radio
+        margin-right: 10px
+
+.send-message
+    display: flex
+    align-items: center
+    position: relative
+    margin: 0.7rem 1rem
+    overflow: hidden
+    &__input
+        width: 100%
+        padding: 8px 5px
+        border-radius: 20px
+        border-color: transparent
+        font-family: 'Rubik', sans-serif
+        &:focus
+            outline: none
+    &__btn
+        position: absolute
+        right: 5px
+        border-radius: 50%
+        height: 30px
+        width: 30px
+        font-size: 1.2rem
+        border-color: transparent
+        background-color: $desaturatedDarkViolet
+        color: $White
+        @media(min-width: 1440px)
+            cursor: pointer
+
+.section
+    text-align: center
+    @media(min-width: 1440px)
+        text-align: left
+        width: 40%
+    &__heading
+        color: $veryDarkDesaturatedViolet
+        font-size: 2.2rem
+        font-weight: 700
+        @media(min-width: 1440px)
+            font-size: 2.8rem
+    &__desc
+        margin: 1.5rem auto
+        width: 80%
+        font-size: 0.9rem
+        color: $darkGrayishViolet
+        @media(min-width: 1440px)
+            margin: 0 0
+            margin-top: 2rem
+            width: 55%
+            font-size: 1rem
+    
+    
+    
+    
+    
+.attribution
+    font-size: 11px
+    text-align: center
+    @media(min-width: 1440px)
+        font-size: 1rem
+    a 
+        color: hsl(228, 45%, 44%)
